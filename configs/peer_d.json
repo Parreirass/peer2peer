@@ -1,0 +1,19 @@
+{
+    "peer_id": "PeerD",
+    "ip": "127.0.0.1",
+    "port": 5003,
+    "is_seeder": false,
+    "file_path": "../data/downloads/PeerD_recebido_galo.jpg",
+    "neighbors": [
+        {
+            "id": "PeerB",
+            "ip": "127.0.0.1",
+            "port": 5001
+        },
+        {
+            "id": "PeerC",
+            "ip": "127.0.0.1",
+            "port": 5002
+        }
+    ]
+}

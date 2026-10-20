@@ -1,0 +1,14 @@
+{
+    "peer_id": "PeerA",
+    "ip": "127.0.0.1",
+    "port": 5000,
+    "is_seeder": true,
+    "file_path": "../data/original/arquivo_5MB.bin",
+    "file_metadata": {
+        "file_name": "arquivo_5MB.bin",
+        "total_size": 5242880,
+        "block_size": 4096,
+        "hash_sha256": "f8af9c5f06c7bff026e86d16cb986758af8f4e18431b60cb1445ea8443bceb5a"
+    },
+    "neighbors": []
+}

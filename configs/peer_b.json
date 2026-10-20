@@ -1,0 +1,14 @@
+{
+    "peer_id": "PeerB",
+    "ip": "127.0.0.1",
+    "port": 5001,
+    "is_seeder": false,
+    "file_path": "../data/downloads/arquivo_5MB_recebido.bin",
+    "neighbors": [
+        {
+            "id": "PeerA",
+            "ip": "127.0.0.1",
+            "port": 5000
+        }
+    ]
+}
