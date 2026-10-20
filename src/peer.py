@@ -110,7 +110,7 @@ class Peer:
                 break
 
             try:
-                # 1. Pega metadados
+                # Pega metadados
                 if not self.file_meta:
                     resp, _ = self._request(n_ip, n_port, 'GET_META', {})
                     if resp and resp.get('type') == 'META_RESPONSE':
@@ -123,7 +123,7 @@ class Peer:
                         time.sleep(2)
                         continue
 
-                # 2. Pega mapa de blocos do vizinho
+                # Pega mapa de blocos do vizinho
                 resp, _ = self._request(n_ip, n_port, 'GET_BLOCK_MAP', {})
                 if not resp or resp.get('type') != 'BLOCK_MAP_RESPONSE':
                     time.sleep(2)
@@ -136,7 +136,7 @@ class Peer:
                     time.sleep(1)
                     continue
                 
-                # 3. Escolhe um bloco que não está sendo baixado no momento
+                # Escolhe um bloco que não está sendo baixado no momento
                 target_block = None
                 with self.blocks_in_flight_lock:
                     for b in useful_blocks:
@@ -149,7 +149,7 @@ class Peer:
                     time.sleep(0.5)
                     continue
 
-                # 4. Baixa o bloco
+                # Baixa o bloco
                 resp, payload = self._request(n_ip, n_port, 'GET_BLOCK', {'block_index': target_block})
                 
                 if resp and resp.get('type') == 'BLOCK_RESPONSE':
@@ -163,7 +163,7 @@ class Peer:
                     self.blocks_in_flight.discard(target_block)
 
             except ConnectionRefusedError:
-                time.sleep(2) # Vizinho offline
+                time.sleep(2) 
             except Exception as e:
                 time.sleep(2)
 

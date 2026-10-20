@@ -10,7 +10,6 @@ def calculate_sha256(filepath):
     return sha256.hexdigest()
 
 def main():
-    # === MUDE ESTE NOME PARA O NOME DO SEU ARQUIVO REAL ===
     NOME_DO_ARQUIVO = 'galo.jpg' 
     
     ORIGINAL_FILE = f'../data/original/{NOME_DO_ARQUIVO}'
@@ -22,7 +21,7 @@ def main():
         print("Certifique-se de colar o arquivo real na pasta 'data/original/'.")
         return
 
-    # 1. Extrai o tamanho real e o Hash do seu arquivo
+    # Extrai o tamanho real e o Hash do seu arquivo
     FILE_SIZE = os.path.getsize(ORIGINAL_FILE)
     file_hash = calculate_sha256(ORIGINAL_FILE)
     
@@ -30,7 +29,7 @@ def main():
     print(f"Tamanho: {FILE_SIZE} bytes")
     print(f"SHA-256: {file_hash}")
 
-    # 2. Cria os Metadados
+    # Cria os Metadados
     metadata = {
         "file_name": NOME_DO_ARQUIVO,
         "total_size": FILE_SIZE,
@@ -38,7 +37,7 @@ def main():
         "hash_sha256": file_hash
     }
 
-    # 3. Configura o Seeder (Peer A) e Leecher (Peer B)
+    # Configura o Seeder (Peer A) e Leecher (Peer B)
     peer_a_config = {
         "peer_id": "PeerA", "ip": "127.0.0.1", "port": 5000,
         "is_seeder": True, "file_path": ORIGINAL_FILE,
@@ -51,7 +50,7 @@ def main():
         "neighbors": [{"id": "PeerA", "ip": "127.0.0.1", "port": 5000}]
     }
 
-    # 4. Salva os arquivos JSON
+    # Salva os arquivos JSON
     os.makedirs('../configs', exist_ok=True)
     with open('../configs/peer_a.json', 'w', encoding='utf-8') as f:
         json.dump(peer_a_config, f, indent=4)

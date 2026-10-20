@@ -10,7 +10,6 @@ def calculate_sha256(filepath):
     return sha256.hexdigest()
 
 def main():
-    # === MUDE ESTE NOME PARA O SEU ARQUIVO REAL ===
     NOME_DO_ARQUIVO = 'galo.jpg'
     
     ORIGINAL_FILE = f'../data/original/{NOME_DO_ARQUIVO}'
@@ -31,7 +30,6 @@ def main():
         "hash_sha256": file_hash
     }
 
-    # Topologia do Trabalho: A conecta com B e C. D conecta com B e C.
     peer_a = {
         "peer_id": "PeerA", "ip": "127.0.0.1", "port": 5000,
         "is_seeder": True, "file_path": ORIGINAL_FILE, "file_metadata": metadata,

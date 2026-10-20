@@ -17,7 +17,6 @@ class FileManager:
         self._initialize_file()
 
     def _initialize_file(self):
-        """Prepara o arquivo no disco (aloca espaço se for leecher)."""
         if self.is_seeder:
             if not os.path.exists(self.filepath):
                 raise FileNotFoundError(f"Arquivo Seeder não encontrado: {self.filepath}")

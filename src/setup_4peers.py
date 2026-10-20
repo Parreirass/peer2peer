@@ -58,7 +58,7 @@ def main():
 
     peer_b = {
         "peer_id": "PeerB", "ip": "127.0.0.1", "port": 5001,
-        "is_seeder": False, "file_path": '../data/downloads/peer_b_5MB.bin',
+        "is_seeder": False, "file_path": f'../data/downloads/peer_b_{ARCHIVE_NAME}.bin',
         "neighbors": [
             {"id": "PeerA", "ip": "127.0.0.1", "port": 5000},
             {"id": "PeerD", "ip": "127.0.0.1", "port": 5003}
@@ -67,7 +67,7 @@ def main():
 
     peer_c = {
         "peer_id": "PeerC", "ip": "127.0.0.1", "port": 5002,
-        "is_seeder": False, "file_path": '../data/downloads/peer_c_5MB.bin',
+        "is_seeder": False, "file_path": f'../data/downloads/peer_c_{ARCHIVE_NAME}.bin',
         "neighbors": [
             {"id": "PeerA", "ip": "127.0.0.1", "port": 5000},
             {"id": "PeerD", "ip": "127.0.0.1", "port": 5003}
@@ -76,7 +76,7 @@ def main():
 
     peer_d = {
         "peer_id": "PeerD", "ip": "127.0.0.1", "port": 5003,
-        "is_seeder": False, "file_path": '../data/downloads/peer_d_5MB.bin',
+        "is_seeder": False, "file_path": f'../data/downloads/peer_d_{ARCHIVE_NAME}.bin',
         "neighbors": [
             {"id": "PeerB", "ip": "127.0.0.1", "port": 5001},
             {"id": "PeerC", "ip": "127.0.0.1", "port": 5002}
