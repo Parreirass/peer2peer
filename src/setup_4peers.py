@@ -15,17 +15,31 @@ def calculate_sha256(filepath):
     return sha256.hexdigest()
 
 def main():
-    FILE_SIZE = 5 * 1024 * 1024  # 5 MB 
-    BLOCK_SIZE = 4096            # 4 KB
-    ORIGINAL_FILE = '../data/original/arquivo_5MB.bin'
+    # arquivo pequeno
+    # FILE_SIZE = 10 * 1024  
+    # BLOCK_SIZE = 1024   
+    # ARCHIVE_NAME = 'arquivo_1MB'    
+
+    # arquivo medio
+    FILE_SIZE = 5 * 1024 * 1024
+    BLOCK_SIZE = 4096
+    ARCHIVE_NAME = 'arquivo_5MB'  
+
+    # arquivo grande   
+    # FILE_SIZE = 20 * 1024 * 1024
+    # BLOCK_SIZE = 4096 
+    # ARCHIVE_NAME = 'arquivo_10MB'  
+
+    ORIGINAL_FILE = '../data/original/'+ ARCHIVE_NAME +'.bin'
+    # DOWNLOAD_FILE = '../data/downloads/'+ ARCHIVE_NAME +'_recebido.bin'
     
-    print("Gerando arquivo de 5MB para o teste de 4 Peers...")
+    print(f"Gerando arquivo de {ARCHIVE_NAME} para o teste de 4 Peers...")
     generate_random_file(ORIGINAL_FILE, FILE_SIZE)
     file_hash = calculate_sha256(ORIGINAL_FILE)
     print(f"SHA-256 do arquivo original: {file_hash}")
 
     metadata = {
-        "file_name": "arquivo_5MB.bin",
+        "file_name": ARCHIVE_NAME + '.bin',
         "total_size": FILE_SIZE,
         "block_size": BLOCK_SIZE,
         "hash_sha256": file_hash
